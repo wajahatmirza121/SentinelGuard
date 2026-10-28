@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4          # pin to a commit SHA in production
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python -m unittest discover -s tests -v
+      - name: Trust proof (project unchanged, no network)
+        run: python -m sentinel verify tests/fixtures/vulnerable_app
+      - name: Dogfood
+        run: python -m sentinel scan . --full --fail-on high

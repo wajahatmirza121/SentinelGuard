@@ -1,0 +1,14 @@
+[
+  {"id": "SENTINEL-DEMO-0001", "summary": "DEMO advisory for testing only; not a real vulnerability.",
+   "database_specific": {"severity": "HIGH", "demo": true},
+   "affected": [{"package": {"ecosystem": "Packagist", "name": "demo/vulnerable-lib"},
+                 "ranges": [{"type": "ECOSYSTEM", "events": [{"introduced": "0"}, {"fixed": "2.0.1"}]}]}]},
+  {"id": "SENTINEL-DEMO-0002", "summary": "DEMO advisory for testing only; not a real vulnerability.",
+   "database_specific": {"severity": "CRITICAL", "demo": true},
+   "affected": [{"package": {"ecosystem": "npm", "name": "demo-vulnerable-pkg"},
+                 "ranges": [{"type": "SEMVER", "events": [{"introduced": "1.0.0"}, {"fixed": "1.4.2"}]}]}]},
+  {"id": "SENTINEL-DEMO-0003", "summary": "DEMO runtime advisory for testing only; not a real vulnerability.",
+   "database_specific": {"severity": "HIGH", "demo": true},
+   "affected": [{"package": {"ecosystem": "PHP-Runtime", "name": "php"},
+                 "ranges": [{"type": "ECOSYSTEM", "events": [{"introduced": "8.1.0"}, {"fixed": "8.1.5"}]}]}]}
+]

@@ -1,0 +1,17 @@
+{
+  "name": "SentinelGuard permissions manifest",
+  "version": 1,
+  "reads_project_files": true,
+  "writes_project_files": false,
+  "writes_outside_project": "scan state only (default ~/.local/state/sentinel/<project-hash>/): findings database, advisory cache, network log",
+  "executes_project_code": false,
+  "executes_external_programs": "git (read-only: listing staged files) only inside 'sentinel hook pre-commit'",
+  "network": {"default": "denied", "allowlist": "[network].allow in .sentinel.toml",
+              "logged": true, "uses": ["advisory sync (opt-in)", "notification webhook/telegram/email (opt-in)"]},
+  "sends_source_code_anywhere": false,
+  "runs_in_production_app": false,
+  "auto_update": false,
+  "dependencies": "Python standard library only",
+  "ci_permissions": {"contents": "read"},
+  "how_to_verify": ["sentinel verify", "sentinel network-report", "python -m unittest discover tests"]
+}

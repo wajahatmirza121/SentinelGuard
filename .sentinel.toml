@@ -1,0 +1,4 @@
+# sentinel-managed
+# SentinelGuard scanning itself (dogfooding). The test fixtures are deliberately vulnerable, so they are excluded.
+[scan]
+exclude = ["vendor", "node_modules", ".git", "fixtures"]
